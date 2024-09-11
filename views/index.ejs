@@ -1,0 +1,38 @@
+<head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" 
+      content="IE=edge"> 
+  <meta name="viewport" content= 
+      "width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" href= 
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" 
+      type="image/x-icon"> 
+</head> 
+
+<div class="author">
+    <h1 class="author__heading">Hi, I am Tolu.</h1>
+    <p class="author__body">Web developer and an aspiring full stack dev.</p>
+  </div>
+  
+  <img src="img/Birds.webp" alt=" Birds" class="hero-image">
+  
+  <section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+  
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  
+  
+    <% if (nextPage !== null) { %>
+      <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+</section>
